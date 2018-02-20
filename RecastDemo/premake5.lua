@@ -14,11 +14,9 @@ solution "recastnavigation"
 	location (todir)
 
 	-- extra warnings, no exceptions or rtti
-	flags { 
-		"ExtraWarnings",
-		"FloatFast",
-		"Symbols"
-	}
+	warnings "Extra"
+	floatingpoint "Fast"
+	symbols "On"
 	exceptionhandling "Off"
 	rtti "Off"
 
@@ -30,7 +28,7 @@ solution "recastnavigation"
  	-- release configs
 	configuration "Release*"
 		defines { "NDEBUG" }
-		flags { "Optimize" }
+		optimize "On"
 		targetdir ( todir .. "/lib/Release" )
 
 	-- windows specific
